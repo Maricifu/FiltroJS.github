@@ -6,21 +6,71 @@
     <title>ADN DataBase</title>
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
     <body>
-        <div class="container">
-            <h1 class="text-center">Villa Chica Police Department ADN DataBase</h1>
-            <h5 class="text-center">Mediante este sistema de validación de ADN al ingresar la secuencia de cormosomas encontrados en la escena del crimen obtendrá el parentezco para el culpable en nuestra base de datos</h5>
-            <div class="container-formulario">
-                <form id="sistema">
-                    <label for="dnaInput">Ingrese la secuencia: </label>
-                    <input type="number" class="form-control" id="dnaInput" placeholder="Ej:01001001110101101101">
-                    <button id="buscarCulpableBtn" type="button" class="btn-primary">Encontrar culpable</button>
-                    <div id="resultado"></div>
-                </form>
-            </div>
-        </div>
+        
+        <main class="main container-fluid">
+            <nav class="menu">
+                <!--Menu nav-->
+                <section class="menu__container">
+                    <div class="logo">
+                        <h1>ADN DataBase VillaChica PD</h1>
+                    </div>
+
+                    <ul class="menu__links">
+                        <li class="menu__item menu__item--show">
+                            <a href="#" class="menu__link"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-arms-up" viewBox="0 0 16 16">
+                                <path d="M8 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/>
+                                <path d="m5.93 6.704-.846 8.451a.768.768 0 0 0 1.523.203l.81-4.865a.59.59 0 0 1 1.165 0l.81 4.865a.768.768 0 0 0 1.523-.203l-.845-8.451A1.5 1.5 0 0 1 10.5 5.5L13 2.284a.796.796 0 0 0-1.239-.998L9.634 3.84a.7.7 0 0 1-.33.235c-.23.074-.665.176-1.304.176-.64 0-1.074-.102-1.305-.176a.7.7 0 0 1-.329-.235L4.239 1.286a.796.796 0 0 0-1.24.998l2.5 3.216c.317.316.475.758.43 1.204Z"/>
+                              </svg>Ciudadano <img src="assets/rowdown.svg" class="menu__arrow"></a>
+                            <ul class="menu__nesting">
+                                <li class="menu__inside">
+                                    <a href="#" id="crearCiudadano" class="menu__link menu__link--inside"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-add" viewBox="0 0 16 16">
+                                        <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0m-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0M8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4"/>
+                                        <path d="M8.256 14a4.5 4.5 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10q.39 0 .74.025c.226-.341.496-.65.804-.918Q8.844 9.002 8 9c-5 0-6 3-6 4s1 1 1 1z"/>
+                                      </svg>Crear Ciudadano</a>
+                                </li>
+                                <li class="menu__inside">
+                                    <a href="#" id="listarCiudadano" class="menu__link menu__link--inside"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-vcard" viewBox="0 0 16 16">
+                                        <path d="M5 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4m4-2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5M9 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4A.5.5 0 0 1 9 8m1 2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5"/>
+                                        <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zM1 4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H8.96q.04-.245.04-.5C9 10.567 7.21 9 5 9c-2.086 0-3.8 1.398-3.984 3.181A1 1 0 0 1 1 12z"/>
+                                      </svg>Listar Ciudadano</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu__item menu__item--show">
+                            <a href="#" class="menu__link"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-badge" viewBox="0 0 16 16">
+                                <path d="M6.5 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1zM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                                <path d="M4.5 0A2.5 2.5 0 0 0 2 2.5V14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2.5A2.5 2.5 0 0 0 11.5 0zM3 2.5A1.5 1.5 0 0 1 4.5 1h7A1.5 1.5 0 0 1 13 2.5v10.795a4.2 4.2 0 0 0-.776-.492C11.392 12.387 10.063 12 8 12s-3.392.387-4.224.803a4.2 4.2 0 0 0-.776.492z"/>
+                              </svg>Policía<img src="assets/rowdown.svg" class="menu__arrow"></a>
+                            <ul class="menu__nesting">
+                                <li class="menu__inside">
+                                    <a href="#" id="crearCiudadano" class="menu__link menu__link--inside"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-qr-code" viewBox="0 0 16 16">
+                                        <path d="M2 2h2v2H2z"/>
+                                        <path d="M6 0v6H0V0zM5 1H1v4h4zM4 12H2v2h2z"/>
+                                        <path d="M6 10v6H0v-6zm-5 1v4h4v-4zm11-9h2v2h-2z"/>
+                                        <path d="M10 0v6h6V0zm5 1v4h-4V1zM8 1V0h1v2H8v2H7V1zm0 5V4h1v2zM6 8V7h1V6h1v2h1V7h5v1h-4v1H7V8zm0 0v1H2V8H1v1H0V7h3v1zm10 1h-1V7h1zm-1 0h-1v2h2v-1h-1zm-4 0h2v1h-1v1h-1zm2 3v-1h-1v1h-1v1H9v1h3v-2zm0 0h3v1h-2v1h-1zm-4-1v1h1v-2H7v1z"/>
+                                        <path d="M7 12h1v3h4v1H7zm9 2v2h-3v-1h2v-1z"/>
+                                      </svg>Análisis ADN</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+            </nav>
+
+            <!--Seccion contenedor scripts-->
+            <section class="paginacion">
+                <!--Contenedores-->
+                <div id="contenedor_principal" class="mc container-fluid align-content-center text-center justify-content-center">
+                    <div id="main-content">
+                    </div>
+                </div>
+            </section>
+
+        </main>
 
         <!--Scripts-->
         <script src="js/validar.js"></script>
