@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADN DataBase</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+    <body>
+        <div class="container">
+            <h1 class="text-center">Villa Chica Police Department ADN DataBase</h1>
+            <h5 class="text-center">Mediante este sistema de validación de ADN al ingresar la secuencia de cormosomas encontrados en la escena del crimen obtendrá el parentezco para el culpable en nuestra base de datos</h5>
+            <div class="container-formulario">
+                <form id="sistema">
+                    <label for="dnaInput">Ingrese la secuencia: </label>
+                    <input type="number" class="form-control" id="dnaInput" placeholder="Ej:01001001110101101101">
+                    <button id="buscarCulpableBtn" type="button" class="btn-primary">Encontrar culpable</button>
+                    <div id="resultado"></div>
+                </form>
+            </div>
+        </div>
+
+        <!--Scripts-->
+        <script src="js/validar.js"></script>
+        <script src="js/app.js"></script>
+    </body>
+</html>
