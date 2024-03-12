@@ -113,3 +113,26 @@ main.container-fluid {
 svg{
     margin: 10px;
 }
+
+
+/*Contenedores*/
+#main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow-y: auto; /* Esto permite el desplazamiento vertical */
+    max-height: 900px; 
+}
+
+#main-content > div {
+    color: #fff;
+    width: 80%;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #2a003c;
+    border-radius: 5px;
+    background-color: #2a003357;
+}
+
