@@ -1,0 +1,6 @@
+# ADN DataBase WebPage
+
+## Funciones de la Web:
+    - El Departamento de Policía Local, ubicado en Villa Chica, incorpora un sistema de reconocimiento de ADN. En cada caso criminal registrado en la ciudad, la policía puede recopilar muestras de la escena del crimen, incluyendo pruebas de ADN con un código de 20 dígitos binarios (0 y 1). Estas muestras se enviarán al sistema correspondiente para realizar búsquedas en la base de datos de ADN de los ciudadanos, mostrando los primeros 5 resultados en orden ascendente de mayor coincidencia.
+
+    La aplicación proporciona una base de datos inicial, pero también permite la creación de nuevos registros de ciudadanos. Esta tambien implemeta un sistema de validación para garantizar que no existan códigos de ADN duplicados, ya que cada código debe ser único en el sistema. Este enfoque asegura la integridad y singularidad de la información almacenada en la base de datos de ADN, mejorando la eficacia del sistema de reconocimiento en la resolución de casos criminales.
